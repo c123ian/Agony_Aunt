@@ -61,16 +61,16 @@ def chat_window():
     )
 
 
-def chat_title():
+def chat_title(session_id):
     return Div(
-        "Tell me your woes",
+        f"Session ID: {session_id}",
         cls="text-xs font-mono absolute top-0 left-0 w-fit p-1 bg-zinc-900 border-b border-r border-zinc-700 rounded-tl-md rounded-br-md",
     )
 
 
-def chat():
+def chat(session_id):
     return Div(
-        chat_title(),
+        chat_title(session_id),
         chat_window(),
         chat_form(),
         Script(
@@ -96,3 +96,4 @@ def chat():
         ws_connect="/ws",
         cls="flex flex-col w-full max-w-2xl border border-zinc-700 h-full rounded-md outline-1 outline outline-zinc-700 outline-offset-2 relative",
     )
+
